@@ -21,34 +21,48 @@ struct ConverterView: View {
             
             HStack{
                 Text("Rate € -> $")
-                TextField("Euro to Dollar", text: $converterViewModel.dollar
-                )
+                    .padding(.leading)
+                Text("1.10413")
+                .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                .border(.secondary)
             }
 
             HStack{
                 Text("Rate € -> £")
-                TextField("Euro to Pound",text: $converterViewModel.pound)
+                    .padding(.leading)
+                Text("0.85933")
+                    .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                    .border(.secondary)
             }
             
             HStack{
                 TextField("Euro",text: $euro).onSubmit {
-                    converterViewModel
+                    converterViewModel.dollar
                 }
+                .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                .border(.secondary).padding(.leading)
                 Text("€")
+                    .padding(.trailing)
             }
             
             HStack{
                 TextField("Dollar",text: $dollar).onSubmit {
                     converterViewModel.dollar
                 }
+                .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                .border(.secondary).padding(.leading)
                 Text("$")
+                    .padding(.trailing)
             }
             
             HStack{
                 TextField("Pound",text: $pound).onSubmit {
                     converterViewModel.pound
                 }
+                .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                .border(.secondary).padding(.leading)
                 Text("£")
+                    .padding(.trailing)
             }
         }
         
@@ -61,3 +75,5 @@ struct ConverterView_Previews: PreviewProvider {
         ConverterView(converterViewModel: ConverterViewModel())
     }
 }
+
+
